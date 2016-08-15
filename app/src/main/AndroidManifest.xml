@@ -18,11 +18,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activities.Project.ProjectsDisplay"
-                  android:theme="@style/AppTheme.NoActionBar">
-
-
+        <activity
+            android:name=".Activities.Project.ProjectsDisplay"
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
+        <activity
+            android:name=".Activities.Project.Project_detail_activity"
+            android:label="@string/title_activity_project_detail_activity"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity android:name="za.co.riggaroo.materialhelptutorial.tutorial.MaterialTutorialActivity"
+                  android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
     </application>
 
 </manifest>

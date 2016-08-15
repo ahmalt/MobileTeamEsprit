@@ -2,23 +2,40 @@ package mobile.esprit.tn.mobileteam;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.backendless.Backendless;
 
+import java.util.ArrayList;
+
 import mobile.esprit.tn.mobileteam.Activities.Project.ProjectsDisplay;
 import mobile.esprit.tn.mobileteam.Utile.Defaults;
+import za.co.riggaroo.materialhelptutorial.TutorialItem;
+import za.co.riggaroo.materialhelptutorial.tutorial.MaterialTutorialActivity;
 
 public class MainActivity extends AppCompatActivity {
+
+    private static final int REQUEST_CODE = 1234;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        RelativeLayout rl=(RelativeLayout)findViewById(R.id.header_logo);
+        rl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                loadTutorial();
+            }
+        });
 
 
 //initialise backendless call
@@ -39,6 +56,51 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     //
+
+
+
+
+
+public void loadTutorial() {
+        Intent mainAct = new Intent(this, MaterialTutorialActivity.class);
+        mainAct.putParcelableArrayListExtra(MaterialTutorialActivity.MATERIAL_TUTORIAL_ARG_TUTORIAL_ITEMS, getTutorialItems(this));
+        startActivityForResult(mainAct, REQUEST_CODE);
+
+        }
+
+
+
+private ArrayList<TutorialItem> getTutorialItems(Context context ) {
+        TutorialItem tutorialItem1 = new TutorialItem(R.string.slide_1_APP, R.string.slide_1_african_story_books_subtitle,
+        R.color.start_stream_background, R.drawable.slide1forground,  R.drawable.slide1background);
+
+        TutorialItem tutorialItem2 = new TutorialItem(R.string.slide_2_volunteer_professionals, R.string.slide_2_volunteer_professionals_subtitle,
+        R.color.view_stream_background,  R.drawable.tut_page_2_front,  R.drawable.tut_page_2_background);
+
+        TutorialItem tutorialItem3 = new TutorialItem(context.getString(R.string.slide_3_download_and_go), null,
+        R.color.settings_background,R.drawable.idea);
+
+        TutorialItem tutorialItem4 = new TutorialItem(R.string.slide_4_different_languages, R.string.slide_4_different_languages_subtitle,
+        R.color.how_to_use_background,  R.drawable.tut_page_4_foreground, R.drawable.tut_page_4_background);
+
+        ArrayList<TutorialItem> tutorialItems = new ArrayList<>();
+        tutorialItems.add(tutorialItem1);
+        tutorialItems.add(tutorialItem2);
+        tutorialItems.add(tutorialItem3);
+        tutorialItems.add(tutorialItem4);
+
+        return tutorialItems;
+        }
+
+    //
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        //    super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK && requestCode == REQUEST_CODE){
+            Toast.makeText(this, "Thank you", Toast.LENGTH_LONG).show();
+
+        }
+    }
     // the show alert method
     public static void showAlert( final Activity context, String message )
     {

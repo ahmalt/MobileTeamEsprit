@@ -1,6 +1,5 @@
 package mobile.esprit.tn.mobileteam.Activities.Project;
 
-import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
@@ -49,12 +48,12 @@ public class ProjectsDisplay extends AppCompatActivity {
         setContentView(R.layout.projects_display);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         initCollapsingToolbar();
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-
         projectList = new ArrayList<>();
+       // prepareProjects();
         adapter = new ProjectsAdapter(this, projectList);
+        prepareProjects();
 
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(mLayoutManager);
@@ -63,7 +62,6 @@ public class ProjectsDisplay extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 
 
-            prepareProjects();
 
 
         try {
@@ -131,7 +129,7 @@ public class ProjectsDisplay extends AppCompatActivity {
             albumList.add(a);*/
 
 
-            System.out.println("\n============ Loading relations with the ASYNC API ============");
+        System.out.println("\n============ Loading relations with the ASYNC API ============");
         //synchronization aid that makes the main thread wait until the countdown reaches 0
 
 
@@ -152,7 +150,10 @@ public class ProjectsDisplay extends AppCompatActivity {
                 p.setName(ProjectName);
                 p.setDescription(ProjectDesc);
                 p.setImage(ProjectImage);
-               projectList.add(p);
+                projectList.add(p);
+                adapter.notifyDataSetChanged();
+
+
             }
 
             @Override
@@ -164,7 +165,7 @@ public class ProjectsDisplay extends AppCompatActivity {
 
 
 
-      AsyncCallback<BackendlessCollection<Project>> callback=new AsyncCallback<BackendlessCollection<Project>>()
+        AsyncCallback<BackendlessCollection<Project>> callback=new AsyncCallback<BackendlessCollection<Project>>()
         {
             @Override
             public void handleResponse( BackendlessCollection<Project> projects )
@@ -177,7 +178,7 @@ public class ProjectsDisplay extends AppCompatActivity {
                 while( iterator.hasNext() )
                 {
                     Project project=iterator.next();
-                    List<String> relations = new ArrayList<String>();
+                    List<String> relations = new ArrayList<>();
                     relations.add( "medias" );
                     Backendless.Data.of( Project.class ).loadRelations( project, relations, loadRelationsCallback );
                 }
@@ -281,6 +282,3 @@ public class ProjectsDisplay extends AppCompatActivity {
     }
 
 }
-
-
-
