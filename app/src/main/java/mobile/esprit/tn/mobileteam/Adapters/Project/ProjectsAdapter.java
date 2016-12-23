@@ -1,8 +1,6 @@
 package mobile.esprit.tn.mobileteam.Adapters.Project;
 
 import android.content.Context;
-
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -10,21 +8,15 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-
 import android.widget.ImageView;
-
 import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
 import com.squareup.picasso.Picasso;
 
-import java.io.Serializable;
 import java.util.List;
 
-import mobile.esprit.tn.mobileteam.Activities.Project.Project_detail_activity;
-import mobile.esprit.tn.mobileteam.Activities.Project.ProjectsDisplay;
 import mobile.esprit.tn.mobileteam.Models.Project;
 import mobile.esprit.tn.mobileteam.R;
 
@@ -35,22 +27,11 @@ public class ProjectsAdapter  extends RecyclerView.Adapter<ProjectsAdapter.MyVie
     private Context mContext;
     private List<Project> projectList;
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
-
-        public TextView name;
-        public ImageView image, overflow;
-
-        public MyViewHolder(View view) {
-            super(view);
-            name = (TextView) view.findViewById(R.id.name);
-            image = (ImageView) view.findViewById(R.id.image);
-            overflow = (ImageView) view.findViewById(R.id.overflow);
-        }
-    }
     public ProjectsAdapter(Context mContext, List<Project> projectList) {
         this.mContext = mContext;
         this.projectList = projectList;
     }
+
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         final View itemView = LayoutInflater.from(parent.getContext())
@@ -73,6 +54,7 @@ public class ProjectsAdapter  extends RecyclerView.Adapter<ProjectsAdapter.MyVie
         return new MyViewHolder(itemView);
 
     }
+
     @Override
     public void onBindViewHolder(final MyViewHolder holder, int position) {
         Project project = projectList.get(position);
@@ -83,10 +65,10 @@ public class ProjectsAdapter  extends RecyclerView.Adapter<ProjectsAdapter.MyVie
             @Override
             public void onClick(View view) {
                 Toast.makeText(mContext,"you clicked on item number"+ getItemCount(),Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(mContext, Project_detail_activity.class);
-
-                intent.putExtra(Project_detail_activity.EXTRA_NAME,  holder.name.toString());
-                mContext.startActivity(intent);
+                //Intent intent = new Intent(mContext, Project_detail_activity.class);
+//it will display the fragment containing details
+                // intent.putExtra(Project_detail_activity.EXTRA_NAME,  holder.name.toString());
+                //  mContext.startActivity(intent);
             }
         });
 
@@ -104,6 +86,7 @@ public class ProjectsAdapter  extends RecyclerView.Adapter<ProjectsAdapter.MyVie
             }
         });
     }
+
     /**
      * Showing popup menu when tapping on 3 dots
      */
@@ -115,6 +98,28 @@ public class ProjectsAdapter  extends RecyclerView.Adapter<ProjectsAdapter.MyVie
         popup.setOnMenuItemClickListener(new MyMenuItemClickListener());
         popup.show();
     }
+
+    @Override
+    public int getItemCount() {
+        return projectList.size();
+    }
+
+    public class MyViewHolder extends RecyclerView.ViewHolder {
+
+        public TextView name;
+        public ImageView image, overflow;
+
+        public MyViewHolder(View view) {
+            super(view);
+            name = (TextView) view.findViewById(R.id.name);
+            image = (ImageView) view.findViewById(R.id.image);
+            overflow = (ImageView) view.findViewById(R.id.overflow);
+        }
+    }
+    //****************//test on item  click listener
+
+    //*********//
+
     /**
      * Click listener for popup menu items
      */
@@ -139,14 +144,6 @@ public class ProjectsAdapter  extends RecyclerView.Adapter<ProjectsAdapter.MyVie
         }
 
 
-    }
-    //****************//test on item  click listener
-
-    //*********//
-
-    @Override
-    public int getItemCount() {
-        return projectList.size();
     }
 
 }

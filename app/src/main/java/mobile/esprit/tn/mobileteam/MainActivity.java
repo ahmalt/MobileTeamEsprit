@@ -5,8 +5,8 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
@@ -15,7 +15,10 @@ import com.backendless.Backendless;
 
 import java.util.ArrayList;
 
-import mobile.esprit.tn.mobileteam.Activities.Project.ProjectsDisplay;
+import mobile.esprit.tn.mobileteam.Activities.Project.ProjectActivity;
+import mobile.esprit.tn.mobileteam.Activities.Project.pagerTransition.PrjectsCardViews;
+import mobile.esprit.tn.mobileteam.Activities.Users.LoginActivity;
+import mobile.esprit.tn.mobileteam.Activities.Users.RegistraionActivity;
 import mobile.esprit.tn.mobileteam.Utile.Defaults;
 import za.co.riggaroo.materialhelptutorial.TutorialItem;
 import za.co.riggaroo.materialhelptutorial.tutorial.MaterialTutorialActivity;
@@ -23,6 +26,17 @@ import za.co.riggaroo.materialhelptutorial.tutorial.MaterialTutorialActivity;
 public class MainActivity extends AppCompatActivity {
 
     private static final int REQUEST_CODE = 1234;
+
+    // the show alert method
+    public static void showAlert(final Activity context, String message) {
+        new AlertDialog.Builder(context).setTitle("An error occurred").setMessage(message).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                context.finish();
+            }
+        }).show();
+    }
+    //
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,18 +62,32 @@ public class MainActivity extends AppCompatActivity {
         Backendless.setUrl(Defaults.SERVER_URL);
         Backendless.initApp(this, Defaults.APPLICATION_ID, Defaults.SECRET_KEY, Defaults.VERSION);
     }
-    //
+
     /** Called when the user clicks the Send button to go to Display Projects */
     public void sendMessage(View view) {
         // Do something in response to button
-        Intent intent = new Intent(this, ProjectsDisplay.class);
+        Intent intent = new Intent(this, ProjectActivity.class);
         startActivity(intent);
     }
+
     //
+    public void connect(View view) {
+        // Do something in response to button
+        Intent intent = new Intent(this, PrjectsCardViews.class);
+        startActivity(intent);
+    }
 
+    public void SignUp(View view) {
+        // Do something in response to button
+        Intent intent = new Intent(this, RegistraionActivity.class);
+        startActivity(intent);
+    }
 
-
-
+    public void LogIN(View view) {
+        // Do something in response to button
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+    }
 
 public void loadTutorial() {
         Intent mainAct = new Intent(this, MaterialTutorialActivity.class);
@@ -67,8 +95,6 @@ public void loadTutorial() {
         startActivityForResult(mainAct, REQUEST_CODE);
 
         }
-
-
 
 private ArrayList<TutorialItem> getTutorialItems(Context context ) {
         TutorialItem tutorialItem1 = new TutorialItem(R.string.slide_1_APP, R.string.slide_1_african_story_books_subtitle,
@@ -100,17 +126,5 @@ private ArrayList<TutorialItem> getTutorialItems(Context context ) {
             Toast.makeText(this, "Thank you", Toast.LENGTH_LONG).show();
 
         }
-    }
-    // the show alert method
-    public static void showAlert( final Activity context, String message )
-    {
-        new AlertDialog.Builder( context ).setTitle( "An error occurred" ).setMessage( message ).setPositiveButton( "OK", new DialogInterface.OnClickListener()
-        {
-            @Override
-            public void onClick( DialogInterface dialogInterface, int i )
-            {
-                context.finish();
-            }
-        } ).show();
     }
 }

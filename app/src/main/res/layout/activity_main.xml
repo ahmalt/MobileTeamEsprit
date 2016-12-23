@@ -73,7 +73,7 @@
             android:layout_weight="1"
             android:background="@color/view_stream_background"
             android:gravity="center_vertical|center_horizontal"
-
+            android:onClick="connect"
             android:orientation="vertical">
 
             <ImageView
@@ -106,7 +106,7 @@
             android:layout_weight="1"
             android:background="@color/settings_background"
             android:gravity="center_vertical|center_horizontal"
-
+            android:onClick="SignUp"
             android:orientation="vertical">
 
             <ImageView
@@ -120,7 +120,7 @@
                 style="@style/text_style"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/settings_uppercase"
+                android:text="@string/SignUp"
                 android:textSize="15sp" />
         </LinearLayout>
 
@@ -131,7 +131,7 @@
             android:layout_weight="1"
             android:background="@color/how_to_use_background"
             android:gravity="center_vertical|center_horizontal"
-
+            android:onClick="LogIN"
             android:orientation="vertical">
 
             <ImageView
@@ -145,7 +145,7 @@
                 style="@style/text_style"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/how_to_use" />
+                android:text="@string/logIn" />
         </LinearLayout>
     </LinearLayout>
 

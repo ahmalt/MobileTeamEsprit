@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MobileTeam</string>
+    <string name="app_name">TeamUp</string>
     <string name="button_send">Send</string>
     <string name="action_settings">Settings</string>
     <string name="action_add_favourite">Add to Favourites</string>
@@ -15,12 +15,21 @@
     <string name="loading_submit_order">Submitting Project…</string>
     <string name="loading_placing_order">Placing your order…</string>
     <string name="title_activity_project_creation">Project Creation</string>
-
+    <!-- button labels -->
+    <string name="activity_login">Endless-To-Go Login</string>
+    <string name="button_login">Login</string>
+    <string name="one">Fragment one</string>
+    <string name="two">Fragment two</string>
+    <string name="three">Fragment three</string>
+    <string name="four">Fragment four</string>
+    <string name="button_login_facebook">Facebook Login</string>
+    <string name="button_login_twitter">Login with Twitter</string>
     <string name="title_activity_project_detail_activity">Project_detail_activity</string>
     <string name="start_stream">START STREAM</string>
     <string name="connect_stream">CONNECT STREAM</string>
     <string name="settings_uppercase">SETTINGS</string>
-    <string name="how_to_use">HOW TO USE</string>
+    <string name="SignUp">SignUp</string>
+    <string name="logIn">LogIn</string>
     <string name="cancel">Cancel</string>
     <string name="slide_1_APP">The New ESPRIT Mobile Team App</string>
     <string name="slide_2_volunteer_professionals">Created by The Team to The Team</string>
@@ -28,10 +37,52 @@
     <string name="slide_4_different_languages">Available in different languages</string>
     <string name="slide_1_african_story_books_subtitle">That anyone can freely translate and distribute.</string>
     <string name="slide_2_volunteer_professionals_subtitle">Every day our Team need This app.</string>
-    <string name="slide_3_download_and_go_subtitle" >available on one click to show you every thing you want to know about ESPRIT Mobile</string>
+    <string name="slide_3_download_and_go_subtitle">available on one click to show you every thing you want to know about ESPRIT Mobile</string>
     <string name="slide_4_different_languages_subtitle">English, friensh and more!</string>
     <string name="view_sample_tut">View </string>
 
     <string name="tutorial_done">FIN</string>
+    <!-- info messages -->
+    <string name="info_registered_template">Registered. ObjectId: %s</string>
+    <string name="info_registered_success">Registered successfully</string>
+    <string name="info_logged_in">Logged in. ObjectId: %s</string>
+    <!-- texts -->
+    <string name="enter_email">Please enter your Email</string>
+    <string name="send_password">Submit</string>
+    <string name="google_button_text">Google+</string>
+    <string name="register_prompt">Do not have an account? Register now</string>
+    <string name="forget_password_prompt">Did you forget your Password ?</string>
+    <string name="divider_or">OR</string>
+    <string name="register_link">Register</string>
+    <string name="forget_password_link">Password</string>
+    <string name="arrow_description">arrow image</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <!-- activity names -->
+    <string name="activity_registration">TeamUp Registration</string>
+
+    <!-- text labels -->
+    <string name="label_name">Name:</string>
+    <string name="label_email">Email address:</string>
+    <string name="label_password">Password:</string>
+    <string name="label_password_confirm">Retype password:</string>
+
+    <!-- button labels -->
+    <string name="button_register">Register</string>
+
+    <!-- warnings -->
+    <string name="warning_name_empty">Name cannot be empty</string>
+    <string name="warning_name_lowercase">Name should start from an uppercase letter</string>
+    <string name="warning_email_empty">Email cannot be empty</string>
+    <string name="warning_email_invalid">Invalid email format</string>
+    <string name="warning_password_empty">Password cannot be empty</string>
+    <string name="warning_passwords_do_not_match">Passwords do not match</string>
+
+    <!-- info messages -->
+    <string name="info_registered">Registered. ObjectId: %s</string>
+    <string name="title_activity_login">LoginActivity</string>
+
 </resources>
 

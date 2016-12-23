@@ -8,14 +8,17 @@
         <item name="colorAccent">@color/colorAccent</item>
 
     </style>
+
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-    <style name="AppBaseTheme" parent="@style/Theme.AppCompat.Light">
-    </style>
+
+    <style name="AppBaseTheme" parent="@style/Theme.AppCompat.Light"></style>
 
     <style name="AppTheme1" parent="AppBaseTheme">
 
@@ -36,7 +39,6 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
 
 
-
         <item name="android:windowDrawsSystemBarBackgrounds" tools:targetApi="21">true</item>
 
     </style>
@@ -50,6 +52,7 @@
         <item name="spinBars">true</item>
 
     </style>
+
     <style name="text_style">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -64,4 +67,15 @@
         <item name="android:textSize">30sp</item>
     </style>
 
+    <style name="MyMaterialTheme" parent="MyMaterialTheme.Base">
+
+    </style>
+
+    <style name="MyMaterialTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
 </resources>

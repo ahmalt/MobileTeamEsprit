@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="mobile.esprit.tn.mobileteam" >
+    package="mobile.esprit.tn.mobileteam">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -10,8 +10,8 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme" >
-        <activity android:name=".MainActivity" >
+        android:theme="@style/MyMaterialTheme">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,16 +19,21 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Activities.Project.ProjectsDisplay"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
-        <activity
             android:name=".Activities.Project.Project_detail_activity"
-            android:label="@string/title_activity_project_detail_activity"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
-        <activity android:name="za.co.riggaroo.materialhelptutorial.tutorial.MaterialTutorialActivity"
-                  android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="za.co.riggaroo.materialhelptutorial.tutorial.MaterialTutorialActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".Activities.Project.pagerTransition.PrjectsCardViews" />
+        <activity android:name=".Activities.Project.pagerTransition.DetailActivityTest" />
+        <activity android:name=".Activities.Users.RegistraionActivity" />
+        <activity
+            android:name=".Activities.Users.LoginActivity"
+            android:label="@string/title_activity_login"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Activities.Users.EnterEmail" />
+        <activity android:name=".Activities.Project.ProjectActivity"></activity>
     </application>
 
 </manifest>

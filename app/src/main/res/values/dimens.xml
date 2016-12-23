@@ -1,4 +1,9 @@
 <resources>
+
+    <!-- Tablet Mode Flag -->
+    <bool name="is_tablet">true</bool>
+
+
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
@@ -17,4 +22,12 @@
     <dimen name="ic_album_overflow_width">20dp</dimen>
     <dimen name="ic_album_overflow_height">30dp</dimen>
     <dimen name="ic_album_overflow_margin_top">10dp</dimen>
+    <dimen name="card_bottom_info_height">150dp</dimen>
+    <dimen name="card_extra_height">20dp</dimen>
+    <dimen name="header_margin">64dp</dimen>
+    <dimen name="view_horizontal_margin">8dp</dimen>
+    <dimen name="view_vertical_margin">8dp</dimen>
+    <dimen name="dp48">48dp</dimen>
+    <dimen name="dp40">40dp</dimen>
+    <dimen name="dp4">4dp</dimen>
 </resources>
