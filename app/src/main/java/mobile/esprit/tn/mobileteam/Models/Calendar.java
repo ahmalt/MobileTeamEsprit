@@ -5,7 +5,9 @@ import com.backendless.BackendlessCollection;
 import com.backendless.async.callback.AsyncCallback;
 import com.backendless.persistence.BackendlessDataQuery;
 
-public class Calendar
+import java.io.Serializable;
+
+public class Calendar implements Serializable
 {
   private String objectId;
   private String name;

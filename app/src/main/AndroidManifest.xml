@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
+        android:name="android.support.multidex.MultiDexApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -33,7 +34,8 @@
             android:label="@string/title_activity_login"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Activities.Users.EnterEmail" />
-        <activity android:name=".Activities.Project.ProjectActivity"></activity>
+        <activity android:name=".Activities.Project.ProjectActivity" />
+        <activity android:name=".Activities.Project.ProjectDetailActivity" />
     </application>
 
 </manifest>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/detail_button_height"
+    android:background="@color/button_background"
+    android:baselineAligned="false"
+    android:orientation="horizontal">
+
+    <!-- Photos Button -->
+    <RelativeLayout
+        android:id="@+id/button_photos"
+        style="@style/MovieButtonStyle">
+
+        <LinearLayout style="@style/MovieButtonContainerStyle">
+
+            <ImageView
+                style="@style/MovieButtonIconStyle"
+                android:src="@drawable/button_photos"
+                tools:ignore="contentDescription" />
+
+            <com.ronakmanglani.watchlist.ui.view.RobotoBoldTextView
+                style="@style/MovieButtonTextStyle"
+                android:text="@string/detail_button_photos" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <include layout="@layout/layout_separator" />
+
+    <!-- Videos Button -->
+    <RelativeLayout
+        android:id="@+id/button_videos"
+        style="@style/MovieButtonStyle">
+
+        <LinearLayout style="@style/MovieButtonContainerStyle">
+
+            <ImageView
+                style="@style/MovieButtonIconStyle"
+                android:src="@drawable/button_videos"
+                tools:ignore="contentDescription" />
+
+            <mobile.esprit.tn.mobileteam.Ui.RobotoBoldTextView
+                style="@style/MovieButtonTextStyle"
+                android:text="@string/detail_button_videos" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <include layout="@layout/layout_separator" />
+
+    <!-- Reviews Button -->
+    <RelativeLayout
+        android:id="@+id/button_reviews"
+        style="@style/MovieButtonStyle">
+
+        <LinearLayout style="@style/MovieButtonContainerStyle">
+
+            <ImageView
+                style="@style/MovieButtonIconStyle"
+                android:src="@drawable/button_reviews"
+                tools:ignore="contentDescription" />
+
+            <mobile.esprit.tn.mobileteam.Ui.RobotoBoldTextView
+                style="@style/MovieButtonTextStyle"
+                android:text="@string/detail_button_reviews" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

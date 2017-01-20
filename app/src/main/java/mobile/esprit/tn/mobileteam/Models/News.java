@@ -5,7 +5,9 @@ import com.backendless.BackendlessCollection;
 import com.backendless.async.callback.AsyncCallback;
 import com.backendless.persistence.BackendlessDataQuery;
 
-public class News
+import java.io.Serializable;
+
+public class News implements Serializable
 {
   private String ownerId;
   private String objectId;

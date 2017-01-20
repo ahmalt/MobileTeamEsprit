@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/project_card"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/movie_list_card_height"
+    android:clickable="true"
+    android:foreground="?attr/selectableItemBackground"
+    cardview:cardBackgroundColor="@color/card_background"
+    cardview:cardPreventCornerOverlap="false"
+    cardview:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Movie poster -->
+        <FrameLayout
+            android:id="@+id/project_poster_holder"
+            android:layout_width="@dimen/movie_list_poster_width"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+
+            <!-- Default image to display if poster is not found -->
+            <ImageView
+                android:id="@+id/project_poster_default"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/default_poster"
+                android:visibility="gone"
+                tools:ignore="ContentDescription" />
+
+            <!-- Poster image -->
+            <ImageView
+                android:id="@+id/project_poster"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/default_image_background"
+                android:scaleType="centerCrop" />
+
+        </FrameLayout>
+
+        <!-- Movie title and rating -->
+        <mobile.esprit.tn.mobileteam.Ui.RobotoRegularTextView
+            android:id="@+id/project_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dist_medium"
+            android:layout_marginRight="@dimen/dist_medium"
+            android:layout_marginTop="@dimen/dist_medium"
+            android:layout_toEndOf="@+id/project_poster_holder"
+            android:layout_toRightOf="@+id/project_poster_holder"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/text_xxlarge"
+            tools:text="My Awesome Movie Title" />
+
+        <!-- Movie release year and overview -->
+        <LinearLayout
+            android:id="@+id/project_detail_holder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/movie_rating_holder"
+            android:layout_below="@+id/project_title"
+            android:layout_marginBottom="@dimen/dist_medium"
+            android:layout_marginLeft="@dimen/dist_medium"
+            android:layout_marginRight="@dimen/dist_medium"
+            android:layout_toRightOf="@+id/project_poster_holder"
+            android:orientation="vertical">
+
+            <mobile.esprit.tn.mobileteam.Ui.RobotoRegularTextView
+                android:id="@id/project_year"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_medium"
+                tools:text="2015" />
+
+            <mobile.esprit.tn.mobileteam.Ui.AutoResizeTextView
+                android:id="@+id/project_overview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/dist_small"
+                android:ellipsize="end"
+                android:textSize="@dimen/text_large"
+                tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin faucibus turpis ac sem varius pretium. Nam vitae mauris augue." />
+
+        </LinearLayout>
+
+        <!-- Movie Rating -->
+        <RelativeLayout
+            android:id="@+id/project_rating_holder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="@dimen/dist_medium"
+            android:layout_marginLeft="@dimen/dist_medium"
+            android:layout_marginRight="@dimen/dist_medium"
+            android:layout_toEndOf="@+id/project_poster_holder"
+            android:layout_toRightOf="@+id/project_poster_holder">
+
+            <mobile.esprit.tn.mobileteam.Ui.RobotoRegularTextView
+                android:id="@+id/project_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dist_small"
+                android:layout_marginRight="@dimen/dist_small"
+                android:layout_toLeftOf="@+id/rating_icon"
+                android:layout_toStartOf="@+id/rating_icon"
+                android:maxLines="1"
+                android:textColor="@color/text_primary"
+                android:textSize="@dimen/text_medium"
+                tools:text="8.76" />
+
+            <ImageView
+                android:id="@+id/rating_icon"
+                android:layout_width="@dimen/movie_rating_icon_size"
+                android:layout_height="@dimen/movie_rating_icon_size"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_star"
+                tools:ignore="contentDescription" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

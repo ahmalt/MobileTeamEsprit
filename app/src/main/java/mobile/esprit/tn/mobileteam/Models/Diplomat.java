@@ -5,7 +5,9 @@ import com.backendless.BackendlessCollection;
 import com.backendless.async.callback.AsyncCallback;
 import com.backendless.persistence.BackendlessDataQuery;
 
-public class Diplomat
+import java.io.Serializable;
+
+public class Diplomat implements Serializable
 {
   private String name;
   private String ownerId;

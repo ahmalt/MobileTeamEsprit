@@ -5,7 +5,9 @@ import com.backendless.BackendlessCollection;
 import com.backendless.async.callback.AsyncCallback;
 import com.backendless.persistence.BackendlessDataQuery;
 
-public class Technology
+import java.io.Serializable;
+
+public class Technology implements Serializable
 {
   private String ownerId;
   private java.util.Date created;

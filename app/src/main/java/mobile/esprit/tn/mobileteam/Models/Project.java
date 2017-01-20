@@ -6,10 +6,12 @@ import com.backendless.BackendlessUser;
 import com.backendless.async.callback.AsyncCallback;
 import com.backendless.persistence.BackendlessDataQuery;
 
-public class Project
-{
+import java.io.Serializable;
+
+public class Project implements Serializable {
   private java.util.Date creationDate;
-  private Integer rating;
+  private String rating;
+  private String backgroundImage;
   private String ownerId;
   private java.util.Date updated;
   private String image;
@@ -18,7 +20,9 @@ public class Project
   private String objectId;
   private String AndroidStoreUrl;
   private String MicrosoftStoreUrl;
+  private String overview;
   private String iosStoreUrl;
+  private String year;
   private java.util.Date created;
   private java.util.List<BackendlessUser> creators;
   private java.util.List<BackendlessUser> Members;
@@ -111,12 +115,20 @@ public class Project
     this.creationDate = creationDate;
   }
 
-  public Integer getRating() {
+  public String getRating() {
     return rating;
   }
 
-  public void setRating(Integer rating) {
+  public void setRating(String rating) {
     this.rating = rating;
+  }
+
+  public String getBackgroundImage() {
+    return backgroundImage;
+  }
+
+  public void setBackgroundImage(String backgroundImage) {
+    this.backgroundImage = backgroundImage;
   }
 
   public String getOwnerId()
@@ -182,6 +194,14 @@ public class Project
     this.MicrosoftStoreUrl = MicrosoftStoreUrl;
   }
 
+  public String getOverview() {
+    return overview;
+  }
+
+  public void setOverview(String overview) {
+    this.overview = overview;
+  }
+
   public String getIosStoreUrl()
   {
     return iosStoreUrl;
@@ -190,6 +210,14 @@ public class Project
   public void setIosStoreUrl( String iosStoreUrl )
   {
     this.iosStoreUrl = iosStoreUrl;
+  }
+
+  public String getYear() {
+    return year;
+  }
+
+  public void setYear(String year) {
+    this.year = year;
   }
 
   public java.util.Date getCreated()

@@ -5,7 +5,9 @@ import com.backendless.BackendlessCollection;
 import com.backendless.async.callback.AsyncCallback;
 import com.backendless.persistence.BackendlessDataQuery;
 
-public class Events
+import java.io.Serializable;
+
+public class Events implements Serializable
 {
   private java.util.Date updated;
   private String name;
