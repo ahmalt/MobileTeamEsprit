@@ -4,17 +4,9 @@ import com.backendless.Backendless;
 import com.backendless.BackendlessCollection;
 import com.backendless.BackendlessUser;
 import com.backendless.async.callback.AsyncCallback;
-import com.backendless.geo.GeoPoint;
 import com.backendless.persistence.BackendlessDataQuery;
 
-import mobile.esprit.tn.mobileteam.Models.Award;
-import mobile.esprit.tn.mobileteam.Models.Future;
-import mobile.esprit.tn.mobileteam.Models.Meeting;
-import mobile.esprit.tn.mobileteam.Models.Technology;
-import mobile.esprit.tn.mobileteam.Models.Video;
-
-public class Project
-{
+public class Project {
   private String etat;
   private java.util.Date creationDate;
   private Integer rating;
@@ -37,43 +29,112 @@ public class Project
   private java.util.List<Technology> Technologies;
   private java.util.List<Award> Awards;
   private java.util.List<Video> Medias;
-  public String getEtat()
-  {
+
+  public static Project findById(String id) {
+    return Backendless.Data.of(Project.class).findById(id);
+  }
+
+  public static Future<Project> findByIdAsync(String id) {
+    if (Backendless.isAndroid()) {
+      throw new UnsupportedOperationException("Using this method is restricted in Android");
+    } else {
+      Future<Project> future = new Future<Project>();
+      Backendless.Data.of(Project.class).findById(id, future);
+
+      return future;
+    }
+  }
+
+  public static void findByIdAsync(String id, AsyncCallback<Project> callback) {
+    Backendless.Data.of(Project.class).findById(id, callback);
+  }
+
+  public static Project findFirst() {
+    return Backendless.Data.of(Project.class).findFirst();
+  }
+
+  public static Future<Project> findFirstAsync() {
+    if (Backendless.isAndroid()) {
+      throw new UnsupportedOperationException("Using this method is restricted in Android");
+    } else {
+      Future<Project> future = new Future<Project>();
+      Backendless.Data.of(Project.class).findFirst(future);
+
+      return future;
+    }
+  }
+
+  public static void findFirstAsync(AsyncCallback<Project> callback) {
+    Backendless.Data.of(Project.class).findFirst(callback);
+  }
+
+  public static Project findLast() {
+    return Backendless.Data.of(Project.class).findLast();
+  }
+
+  public static Future<Project> findLastAsync() {
+    if (Backendless.isAndroid()) {
+      throw new UnsupportedOperationException("Using this method is restricted in Android");
+    } else {
+      Future<Project> future = new Future<Project>();
+      Backendless.Data.of(Project.class).findLast(future);
+
+      return future;
+    }
+  }
+
+  public static void findLastAsync(AsyncCallback<Project> callback) {
+    Backendless.Data.of(Project.class).findLast(callback);
+  }
+
+  public static BackendlessCollection<Project> find(BackendlessDataQuery query) {
+    return Backendless.Data.of(Project.class).find(query);
+  }
+
+  public static Future<BackendlessCollection<Project>> findAsync(BackendlessDataQuery query) {
+    if (Backendless.isAndroid()) {
+      throw new UnsupportedOperationException("Using this method is restricted in Android");
+    } else {
+      Future<BackendlessCollection<Project>> future = new Future<BackendlessCollection<Project>>();
+      Backendless.Data.of(Project.class).find(query, future);
+
+      return future;
+    }
+  }
+
+  public static void findAsync(BackendlessDataQuery query, AsyncCallback<BackendlessCollection<Project>> callback) {
+    Backendless.Data.of(Project.class).find(query, callback);
+  }
+
+  public String getEtat() {
     return etat;
   }
 
-  public void setEtat( String etat )
-  {
+  public void setEtat(String etat) {
     this.etat = etat;
   }
 
-  public java.util.Date getCreationDate()
-  {
+  public java.util.Date getCreationDate() {
     return creationDate;
   }
 
-  public void setCreationDate( java.util.Date creationDate )
-  {
+  public void setCreationDate(java.util.Date creationDate) {
     this.creationDate = creationDate;
   }
 
-  public Integer getRating()
-  {
+  public Integer getRating() {
     return rating;
   }
 
-  public void setRating( Integer rating )
-  {
+  public void setRating(Integer rating) {
     this.rating = rating;
   }
 
-  public String getBackgroundImage()
-  {
+  public String getBackgroundImage() {
     return backgroundImage;
   }
 
-  public void setBackgroundImage( String backgroundImage )
-  {
+  public void setBackgroundImage(String backgroundImage) {
     this.backgroundImage = backgroundImage;
   }
 
@@ -107,13 +168,11 @@ public class Project
     this.name = name;
   }
 
-  public String getImage()
-  {
+  public String getImage() {
     return Image;
   }
 
-  public void setImage( String Image )
-  {
+  public void setImage(String Image) {
     this.Image = Image;
   }
 
@@ -142,13 +201,11 @@ public class Project
     this.MicrosoftStoreUrl = MicrosoftStoreUrl;
   }
 
-  public String getOverview()
-  {
+  public String getOverview() {
     return overview;
   }
 
-  public void setOverview( String overview )
-  {
+  public void setOverview(String overview) {
     this.overview = overview;
   }
 
@@ -162,13 +219,11 @@ public class Project
     this.iosStoreUrl = iosStoreUrl;
   }
 
-  public String getYear()
-  {
+  public String getYear() {
     return year;
   }
 
-  public void setYear( String year )
-  {
+  public void setYear(String year) {
     this.year = year;
   }
 
@@ -177,13 +232,11 @@ public class Project
     return created;
   }
 
-  public java.util.List<BackendlessUser> getCreators()
-  {
+  public java.util.List<BackendlessUser> getCreators() {
     return creators;
   }
 
-  public void setCreators( java.util.List<BackendlessUser> creators )
-  {
+  public void setCreators(java.util.List<BackendlessUser> creators) {
     this.creators = creators;
   }
 
@@ -192,7 +245,7 @@ public class Project
     return Meetings;
   }
 
-  public void setMeetings( java.util.List<Meeting> Meetings )
+  public void setMeetings(java.util.List<Meeting> Meetings)
   {
     this.Meetings = Meetings;
   }
@@ -202,7 +255,7 @@ public class Project
     return Images;
   }
 
-  public void setImages( java.util.List<Image> Images )
+  public void setImages(java.util.List<Image> Images)
   {
     this.Images = Images;
   }
@@ -232,11 +285,10 @@ public class Project
     return Medias;
   }
 
-  public void setMedias( java.util.List<Video> Medias )
+  public void setMedias(java.util.List<Video> Medias)
   {
     this.Medias = Medias;
   }
-
 
   public Project save()
   {
@@ -286,105 +338,5 @@ public class Project
   public void removeAsync( AsyncCallback<Long> callback )
   {
     Backendless.Data.of( Project.class ).remove( this, callback );
-  }
-
-  public static Project findById( String id )
-  {
-    return Backendless.Data.of( Project.class ).findById( id );
-  }
-
-  public static Future<Project> findByIdAsync( String id )
-  {
-    if( Backendless.isAndroid() )
-    {
-      throw new UnsupportedOperationException( "Using this method is restricted in Android" );
-    }
-    else
-    {
-      Future<Project> future = new Future<Project>();
-      Backendless.Data.of( Project.class ).findById( id, future );
-
-      return future;
-    }
-  }
-
-  public static void findByIdAsync( String id, AsyncCallback<Project> callback )
-  {
-    Backendless.Data.of( Project.class ).findById( id, callback );
-  }
-
-  public static Project findFirst()
-  {
-    return Backendless.Data.of( Project.class ).findFirst();
-  }
-
-  public static Future<Project> findFirstAsync()
-  {
-    if( Backendless.isAndroid() )
-    {
-      throw new UnsupportedOperationException( "Using this method is restricted in Android" );
-    }
-    else
-    {
-      Future<Project> future = new Future<Project>();
-      Backendless.Data.of( Project.class ).findFirst( future );
-
-      return future;
-    }
-  }
-
-  public static void findFirstAsync( AsyncCallback<Project> callback )
-  {
-    Backendless.Data.of( Project.class ).findFirst( callback );
-  }
-
-  public static Project findLast()
-  {
-    return Backendless.Data.of( Project.class ).findLast();
-  }
-
-  public static Future<Project> findLastAsync()
-  {
-    if( Backendless.isAndroid() )
-    {
-      throw new UnsupportedOperationException( "Using this method is restricted in Android" );
-    }
-    else
-    {
-      Future<Project> future = new Future<Project>();
-      Backendless.Data.of( Project.class ).findLast( future );
-
-      return future;
-    }
-  }
-
-  public static void findLastAsync( AsyncCallback<Project> callback )
-  {
-    Backendless.Data.of( Project.class ).findLast( callback );
-  }
-
-  public static BackendlessCollection<Project> find( BackendlessDataQuery query )
-  {
-    return Backendless.Data.of( Project.class ).find( query );
-  }
-
-  public static Future<BackendlessCollection<Project>> findAsync( BackendlessDataQuery query )
-  {
-    if( Backendless.isAndroid() )
-    {
-      throw new UnsupportedOperationException( "Using this method is restricted in Android" );
-    }
-    else
-    {
-      Future<BackendlessCollection<Project>> future = new Future<BackendlessCollection<Project>>();
-      Backendless.Data.of( Project.class ).find( query, future );
-
-      return future;
-    }
-  }
-
-  public static void findAsync( BackendlessDataQuery query, AsyncCallback<BackendlessCollection<Project>> callback )
-  {
-    Backendless.Data.of( Project.class ).find( query, callback );
   }
 }

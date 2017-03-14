@@ -1,4 +1,4 @@
-package mobile.esprit.tn.mobileteam;
+package mobile.esprit.tn.mobileteam.Utile;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -16,10 +16,10 @@ import com.backendless.Backendless;
 import java.util.ArrayList;
 
 import mobile.esprit.tn.mobileteam.Activities.Project.ProjectActivity;
-import mobile.esprit.tn.mobileteam.Activities.Project.pagerTransition.PrjectsCardViews;
 import mobile.esprit.tn.mobileteam.Activities.Users.LoginActivity;
+import mobile.esprit.tn.mobileteam.Activities.Users.ProfileActivity;
 import mobile.esprit.tn.mobileteam.Activities.Users.RegistraionActivity;
-import mobile.esprit.tn.mobileteam.Utile.Defaults;
+import mobile.esprit.tn.mobileteam.R;
 import za.co.riggaroo.materialhelptutorial.TutorialItem;
 import za.co.riggaroo.materialhelptutorial.tutorial.MaterialTutorialActivity;
 
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
     //
     public void connect(View view) {
         // Do something in response to button
-        Intent intent = new Intent(this, PrjectsCardViews.class);
+        Intent intent = new Intent(this, ProfileActivity.class);
         startActivity(intent);
     }
 

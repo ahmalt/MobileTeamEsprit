@@ -2,12 +2,8 @@ package mobile.esprit.tn.mobileteam.Models;
 
 import com.backendless.Backendless;
 import com.backendless.BackendlessCollection;
-import com.backendless.BackendlessUser;
 import com.backendless.async.callback.AsyncCallback;
-import com.backendless.geo.GeoPoint;
 import com.backendless.persistence.BackendlessDataQuery;
-
-import mobile.esprit.tn.mobileteam.Models.Future;
 
 public class Entreprise
 {
@@ -18,135 +14,32 @@ public class Entreprise
   private String adresse;
   private String description;
   private java.util.Date updated;
-  public String getObjectId()
+
+  public static Entreprise findById(String id)
   {
-    return objectId;
+    return Backendless.Data.of(Entreprise.class).findById(id);
   }
 
-  public String getOwnerId()
+  public static Future<Entreprise> findByIdAsync(String id)
   {
-    return ownerId;
-  }
-
-  public String getName()
-  {
-    return name;
-  }
-
-  public void setName( String name )
-  {
-    this.name = name;
-  }
-
-  public java.util.Date getCreated()
-  {
-    return created;
-  }
-
-  public String getAdresse()
-  {
-    return adresse;
-  }
-
-  public void setAdresse( String adresse )
-  {
-    this.adresse = adresse;
-  }
-
-  public String getDescription()
-  {
-    return description;
-  }
-
-  public void setDescription( String description )
-  {
-    this.description = description;
-  }
-
-  public java.util.Date getUpdated()
-  {
-    return updated;
-  }
-
-
-  public Entreprise save()
-  {
-    return Backendless.Data.of( Entreprise.class ).save( this );
-  }
-
-  public Future<Entreprise> saveAsync()
-  {
-    if( Backendless.isAndroid() )
-    {
-      throw new UnsupportedOperationException( "Using this method is restricted in Android" );
-    }
-    else
-    {
+    if (Backendless.isAndroid()) {
+      throw new UnsupportedOperationException("Using this method is restricted in Android");
+    } else {
       Future<Entreprise> future = new Future<Entreprise>();
-      Backendless.Data.of( Entreprise.class ).save( this, future );
+      Backendless.Data.of(Entreprise.class).findById(id, future);
 
       return future;
     }
   }
 
-  public void saveAsync( AsyncCallback<Entreprise> callback )
+  public static void findByIdAsync(String id, AsyncCallback<Entreprise> callback)
   {
-    Backendless.Data.of( Entreprise.class ).save( this, callback );
-  }
-
-  public Long remove()
-  {
-    return Backendless.Data.of( Entreprise.class ).remove( this );
-  }
-
-  public Future<Long> removeAsync()
-  {
-    if( Backendless.isAndroid() )
-    {
-      throw new UnsupportedOperationException( "Using this method is restricted in Android" );
-    }
-    else
-    {
-      Future<Long> future = new Future<Long>();
-      Backendless.Data.of( Entreprise.class ).remove( this, future );
-
-      return future;
-    }
-  }
-
-  public void removeAsync( AsyncCallback<Long> callback )
-  {
-    Backendless.Data.of( Entreprise.class ).remove( this, callback );
-  }
-
-  public static Entreprise findById( String id )
-  {
-    return Backendless.Data.of( Entreprise.class ).findById( id );
-  }
-
-  public static Future<Entreprise> findByIdAsync( String id )
-  {
-    if( Backendless.isAndroid() )
-    {
-      throw new UnsupportedOperationException( "Using this method is restricted in Android" );
-    }
-    else
-    {
-      Future<Entreprise> future = new Future<Entreprise>();
-      Backendless.Data.of( Entreprise.class ).findById( id, future );
-
-      return future;
-    }
-  }
-
-  public static void findByIdAsync( String id, AsyncCallback<Entreprise> callback )
-  {
-    Backendless.Data.of( Entreprise.class ).findById( id, callback );
+    Backendless.Data.of(Entreprise.class).findById(id, callback);
   }
 
   public static Entreprise findFirst()
   {
-    return Backendless.Data.of( Entreprise.class ).findFirst();
+    return Backendless.Data.of(Entreprise.class).findFirst();
   }
 
   public static Future<Entreprise> findFirstAsync()
@@ -158,20 +51,20 @@ public class Entreprise
     else
     {
       Future<Entreprise> future = new Future<Entreprise>();
-      Backendless.Data.of( Entreprise.class ).findFirst( future );
+      Backendless.Data.of(Entreprise.class).findFirst(future);
 
       return future;
     }
   }
 
-  public static void findFirstAsync( AsyncCallback<Entreprise> callback )
+  public static void findFirstAsync(AsyncCallback<Entreprise> callback)
   {
-    Backendless.Data.of( Entreprise.class ).findFirst( callback );
+    Backendless.Data.of(Entreprise.class).findFirst(callback);
   }
 
   public static Entreprise findLast()
   {
-    return Backendless.Data.of( Entreprise.class ).findLast();
+    return Backendless.Data.of(Entreprise.class).findLast();
   }
 
   public static Future<Entreprise> findLastAsync()
@@ -183,23 +76,23 @@ public class Entreprise
     else
     {
       Future<Entreprise> future = new Future<Entreprise>();
-      Backendless.Data.of( Entreprise.class ).findLast( future );
+      Backendless.Data.of(Entreprise.class).findLast(future);
 
       return future;
     }
   }
 
-  public static void findLastAsync( AsyncCallback<Entreprise> callback )
+  public static void findLastAsync(AsyncCallback<Entreprise> callback)
   {
-    Backendless.Data.of( Entreprise.class ).findLast( callback );
+    Backendless.Data.of(Entreprise.class).findLast(callback);
   }
 
-  public static BackendlessCollection<Entreprise> find( BackendlessDataQuery query )
+  public static BackendlessCollection<Entreprise> find(BackendlessDataQuery query)
   {
-    return Backendless.Data.of( Entreprise.class ).find( query );
+    return Backendless.Data.of(Entreprise.class).find(query);
   }
 
-  public static Future<BackendlessCollection<Entreprise>> findAsync(BackendlessDataQuery query )
+  public static Future<BackendlessCollection<Entreprise>> findAsync(BackendlessDataQuery query)
   {
     if( Backendless.isAndroid() )
     {
@@ -208,14 +101,107 @@ public class Entreprise
     else
     {
       Future<BackendlessCollection<Entreprise>> future = new Future<BackendlessCollection<Entreprise>>();
-      Backendless.Data.of( Entreprise.class ).find( query, future );
+      Backendless.Data.of(Entreprise.class).find(query, future);
 
       return future;
     }
   }
 
-  public static void findAsync( BackendlessDataQuery query, AsyncCallback<BackendlessCollection<Entreprise>> callback )
+  public static void findAsync(BackendlessDataQuery query, AsyncCallback<BackendlessCollection<Entreprise>> callback)
   {
-    Backendless.Data.of( Entreprise.class ).find( query, callback );
+    Backendless.Data.of(Entreprise.class).find(query, callback);
+  }
+
+  public String getObjectId()
+  {
+    return objectId;
+  }
+
+  public String getOwnerId()
+  {
+    return ownerId;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name)
+  {
+    this.name = name;
+  }
+
+  public java.util.Date getCreated()
+  {
+    return created;
+  }
+
+  public String getAdresse() {
+    return adresse;
+  }
+
+  public void setAdresse(String adresse) {
+    this.adresse = adresse;
+  }
+
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
+  public java.util.Date getUpdated()
+  {
+    return updated;
+  }
+
+  public Entreprise save() {
+    return Backendless.Data.of(Entreprise.class).save(this);
+  }
+
+  public Future<Entreprise> saveAsync() {
+    if( Backendless.isAndroid() )
+    {
+      throw new UnsupportedOperationException( "Using this method is restricted in Android" );
+    }
+    else
+    {
+      Future<Entreprise> future = new Future<Entreprise>();
+      Backendless.Data.of(Entreprise.class).save(this, future);
+
+      return future;
+    }
+  }
+
+  public void saveAsync(AsyncCallback<Entreprise> callback)
+  {
+    Backendless.Data.of(Entreprise.class).save(this, callback);
+  }
+
+  public Long remove()
+  {
+    return Backendless.Data.of(Entreprise.class).remove(this);
+  }
+
+  public Future<Long> removeAsync()
+  {
+    if( Backendless.isAndroid() )
+    {
+      throw new UnsupportedOperationException( "Using this method is restricted in Android" );
+    }
+    else
+    {
+      Future<Long> future = new Future<Long>();
+      Backendless.Data.of(Entreprise.class).remove(this, future);
+
+      return future;
+    }
+  }
+
+  public void removeAsync(AsyncCallback<Long> callback)
+  {
+    Backendless.Data.of(Entreprise.class).remove(this, callback);
   }
 }

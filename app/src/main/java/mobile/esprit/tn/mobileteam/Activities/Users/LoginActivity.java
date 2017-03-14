@@ -7,6 +7,7 @@ import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -64,7 +65,11 @@ public class LoginActivity extends Activity {
                             public void handleResponse(BackendlessUser currentUser) {
                                 super.handleResponse(currentUser);
                                 Backendless.UserService.setCurrentUser(currentUser);
-                                Toast.makeText(LoginActivity.this, "LOGGED IN SUCCESSFULLY WITH GOOGLE PLUS", Toast.LENGTH_LONG).show();
+                                Intent myIntent = new Intent(LoginActivity.this, ProfileActivity.class);
+                                myIntent.putExtra("user", currentUser);
+                                startActivity(myIntent);
+                                Log.v("current user", String.valueOf(currentUser));
+                                Toast.makeText(LoginActivity.this, "LOGGED IN SUCCESSFULLY ", Toast.LENGTH_LONG).show();
                                 finish();
                             }
                         });
@@ -105,13 +110,20 @@ public class LoginActivity extends Activity {
         googleFieldsMapping.put("gender", "gender");
         googleFieldsMapping.put("email", "email");
 
+
         List<String> googlePermissions = new ArrayList<>();
 
         Backendless.UserService.loginWithGooglePlus(LoginActivity.this, null, googleFieldsMapping, googlePermissions, new SocialCallback<BackendlessUser>(LoginActivity.this) {
             @Override
             public void handleResponse(BackendlessUser backendlessUser) {
-                // startActivity( new Intent( getBaseContext(), LoginSuccessActivity.class ) );
+
+
+                Intent myIntent = new Intent(LoginActivity.this, ProfileActivity.class);
+
+                startActivity(myIntent);
+
                 Toast.makeText(LoginActivity.this, "LOGGED IN SUCCESSFULLY WITH GOOGLE PLUS", Toast.LENGTH_LONG).show();
+
                 finish();
             }
         });

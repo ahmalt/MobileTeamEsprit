@@ -64,5 +64,12 @@ dependencies {
     compile 'com.wdullaer:materialdatetimepicker:2.3.0'
     testCompile 'junit:junit:4.12'
     apt 'com.jakewharton:butterknife-compiler:8.1.0'
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    compile 'com.flaviofaria:kenburnsview:1.0.7'
+    compile 'com.ramotion.foldingcell:folding-cell:1.1.0'
+    compile 'com.github.ybq:Android-SpinKit:1.1.0'
+    compile 'com.alexzh:circleimageview:1.1.2@aar'
+    compile 'com.mikhaellopez:circularimageview:2.0.1'
+
 
 }
