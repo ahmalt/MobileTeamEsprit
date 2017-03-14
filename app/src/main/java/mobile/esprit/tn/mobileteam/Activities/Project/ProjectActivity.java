@@ -3,6 +3,7 @@ package mobile.esprit.tn.mobileteam.Activities.Project;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 
 import butterknife.BindBool;
 import butterknife.ButterKnife;
@@ -30,6 +31,7 @@ public class ProjectActivity extends AppCompatActivity {
         ProjectDeatilFragment fragment = new ProjectDeatilFragment();
         Bundle args = new Bundle();
         args.putString(TeamUpApp.PROJECT_ID, projectId);
+        Log.v("project id is ", projectId);
         fragment.setArguments(args);
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_detail_project, fragment).commit();
     }

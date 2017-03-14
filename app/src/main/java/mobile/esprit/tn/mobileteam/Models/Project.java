@@ -6,17 +6,16 @@ import com.backendless.BackendlessUser;
 import com.backendless.async.callback.AsyncCallback;
 import com.backendless.persistence.BackendlessDataQuery;
 
-import java.io.Serializable;
-
-public class Project implements Serializable {
+public class Project {
+  private String etat;
   private java.util.Date creationDate;
-  private String rating;
+  private Integer rating;
   private String backgroundImage;
   private String ownerId;
   private java.util.Date updated;
-  private String image;
   private String description;
   private String name;
+  private String Image;
   private String objectId;
   private String AndroidStoreUrl;
   private String MicrosoftStoreUrl;
@@ -25,8 +24,8 @@ public class Project implements Serializable {
   private String year;
   private java.util.Date created;
   private java.util.List<BackendlessUser> creators;
-  private java.util.List<BackendlessUser> Members;
-  private Calendar Calendar;
+  private java.util.List<Meeting> Meetings;
+  private java.util.List<Image> Images;
   private java.util.List<Technology> Technologies;
   private java.util.List<Award> Awards;
   private java.util.List<Video> Medias;
@@ -107,6 +106,14 @@ public class Project implements Serializable {
     Backendless.Data.of(Project.class).find(query, callback);
   }
 
+  public String getEtat() {
+    return etat;
+  }
+
+  public void setEtat(String etat) {
+    this.etat = etat;
+  }
+
   public java.util.Date getCreationDate() {
     return creationDate;
   }
@@ -115,11 +122,11 @@ public class Project implements Serializable {
     this.creationDate = creationDate;
   }
 
-  public String getRating() {
+  public Integer getRating() {
     return rating;
   }
 
-  public void setRating(String rating) {
+  public void setRating(Integer rating) {
     this.rating = rating;
   }
 
@@ -141,14 +148,6 @@ public class Project implements Serializable {
     return updated;
   }
 
-  public String getImage() {
-    return image;
-  }
-
-  public void setImage(String image) {
-    this.image = image;
-  }
-
   public String getDescription()
   {
     return description;
@@ -167,6 +166,14 @@ public class Project implements Serializable {
   public void setName( String name )
   {
     this.name = name;
+  }
+
+  public String getImage() {
+    return Image;
+  }
+
+  public void setImage(String Image) {
+    this.Image = Image;
   }
 
   public String getObjectId()
@@ -233,24 +240,24 @@ public class Project implements Serializable {
     this.creators = creators;
   }
 
-  public java.util.List<BackendlessUser> getMembers()
+  public java.util.List<Meeting> getMeetings()
   {
-    return Members;
+    return Meetings;
   }
 
-  public void setMembers( java.util.List<BackendlessUser> Members )
+  public void setMeetings(java.util.List<Meeting> Meetings)
   {
-    this.Members = Members;
+    this.Meetings = Meetings;
   }
 
-  public Calendar getCalendar()
+  public java.util.List<Image> getImages()
   {
-    return Calendar;
+    return Images;
   }
 
-  public void setCalendar( Calendar Calendar )
+  public void setImages(java.util.List<Image> Images)
   {
-    this.Calendar = Calendar;
+    this.Images = Images;
   }
 
   public java.util.List<Technology> getTechnologies()

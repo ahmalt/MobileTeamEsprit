@@ -5,17 +5,17 @@ import com.backendless.BackendlessCollection;
 import com.backendless.async.callback.AsyncCallback;
 import com.backendless.persistence.BackendlessDataQuery;
 
-import java.io.Serializable;
-
-public class News implements Serializable
+public class News
 {
   private String ownerId;
   private String objectId;
   private java.util.Date created;
   private java.util.Date updated;
   private String name;
+  private java.util.Date NewsDate;
   private String description;
-  private java.util.List<Video> medias;
+  private java.util.List<Image> Images;
+  private java.util.List<Video> videos;
 
   public static News findById(String id)
   {
@@ -140,6 +140,14 @@ public class News implements Serializable
     this.name = name;
   }
 
+  public java.util.Date getNewsDate() {
+    return NewsDate;
+  }
+
+  public void setNewsDate(java.util.Date NewsDate) {
+    this.NewsDate = NewsDate;
+  }
+
   public String getDescription() {
     return description;
   }
@@ -149,14 +157,22 @@ public class News implements Serializable
     this.description = description;
   }
 
-  public java.util.List<Video> getMedias()
+  public java.util.List<Image> getImages()
   {
-    return medias;
+    return Images;
   }
 
-  public void setMedias(java.util.List<Video> medias)
+  public void setImages(java.util.List<Image> Images)
   {
-    this.medias = medias;
+    this.Images = Images;
+  }
+
+  public java.util.List<Video> getVideos() {
+    return videos;
+  }
+
+  public void setVideos(java.util.List<Video> videos) {
+    this.videos = videos;
   }
 
   public News save() {

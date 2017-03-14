@@ -147,7 +147,7 @@ public class Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 projectGridViewHolder.imageView.setVisibility(View.GONE);
             }
             // Display movie rating
-            if (TextUtils.isNullOrEmpty(project.getRating()) || project.getRating().equals("0")) {
+            if (TextUtils.isNullOrEmpty(String.valueOf(project.getRating())) || project.getRating().equals("0")) {
                 projectGridViewHolder.projectRatingIcon.setVisibility(View.GONE);
                 projectGridViewHolder.projectRating.setVisibility(View.GONE);
 
@@ -181,7 +181,7 @@ public class Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 projectListViewHolder.imageView.setVisibility(View.GONE);
             }
             // Display movie rating
-            if (TextUtils.isNullOrEmpty(project.getRating()) || project.getRating().equals("0")) {
+            if (TextUtils.isNullOrEmpty(String.valueOf(project.getRating())) || project.getRating().equals("0")) {
                 projectListViewHolder.projectRatingIcon.setVisibility(View.GONE);
                 projectListViewHolder.projectRating.setVisibility(View.GONE);
 
@@ -206,7 +206,7 @@ public class Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
             }
             // Display movie rating
-            if (TextUtils.isNullOrEmpty(project.getRating()) || project.getRating().equals("0")) {
+            if (TextUtils.isNullOrEmpty(String.valueOf(project.getRating())) || project.getRating().equals("0")) {
                 projectCompactViewHolder.projectRatingIcon.setVisibility(View.GONE);
                 projectCompactViewHolder.projectRating.setVisibility(View.GONE);
             } else {

@@ -5,13 +5,15 @@ import com.backendless.BackendlessCollection;
 import com.backendless.async.callback.AsyncCallback;
 import com.backendless.persistence.BackendlessDataQuery;
 
-import java.io.Serializable;
-
-public class University implements Serializable
+public class University
 {
+  private String zipcode;
   private String ownerId;
+  private String provence;
+  private String name;
   private java.util.Date created;
   private String objectId;
+  private String contrry;
   private java.util.Date updated;
 
   public static University findById(String id)
@@ -114,9 +116,33 @@ public class University implements Serializable
     Backendless.Data.of(University.class).find(query, callback);
   }
 
+  public String getZipcode() {
+    return zipcode;
+  }
+
+  public void setZipcode(String zipcode) {
+    this.zipcode = zipcode;
+  }
+
   public String getOwnerId()
   {
     return ownerId;
+  }
+
+  public String getProvence() {
+    return provence;
+  }
+
+  public void setProvence(String provence) {
+    this.provence = provence;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
   }
 
   public java.util.Date getCreated()
@@ -126,6 +152,14 @@ public class University implements Serializable
 
   public String getObjectId() {
     return objectId;
+  }
+
+  public String getContrry() {
+    return contrry;
+  }
+
+  public void setContrry(String contrry) {
+    this.contrry = contrry;
   }
 
   public java.util.Date getUpdated() {

@@ -5,9 +5,7 @@ import com.backendless.BackendlessCollection;
 import com.backendless.async.callback.AsyncCallback;
 import com.backendless.persistence.BackendlessDataQuery;
 
-import java.io.Serializable;
-
-public class Video implements Serializable {
+public class Video {
   private java.util.Date updated;
   private String objectId;
   private String youtubeId;

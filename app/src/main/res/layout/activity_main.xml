@@ -6,7 +6,7 @@
     android:background="@color/start_stream_background"
     android:orientation="vertical"
     android:weightSum="5"
-    tools:context=".MainActivity">
+    tools:context=".Utile.MainActivity">
 
     <RelativeLayout
         android:id="@+id/header_logo"
@@ -62,7 +62,7 @@
                 style="@style/text_style"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/button_send"
+                android:text="@string/button_Projects"
                 android:textSize="15sp" />
         </LinearLayout>
 
@@ -87,7 +87,7 @@
                 style="@style/text_style"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/connect_stream"
+                android:text="@string/Team_members"
                 android:textSize="15sp" />
         </LinearLayout>
     </LinearLayout>

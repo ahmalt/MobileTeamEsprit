@@ -5,9 +5,7 @@ import com.backendless.BackendlessCollection;
 import com.backendless.async.callback.AsyncCallback;
 import com.backendless.persistence.BackendlessDataQuery;
 
-import java.io.Serializable;
-
-public class file implements Serializable {
+public class file {
   private String objectId;
   private String filleUrl;
   private Double size;
