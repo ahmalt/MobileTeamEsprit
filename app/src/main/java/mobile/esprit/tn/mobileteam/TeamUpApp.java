@@ -2,12 +2,21 @@ package mobile.esprit.tn.mobileteam;
 
 import android.app.Application;
 import android.content.Context;
+import android.os.Handler;
+
+import mobile.esprit.tn.mobileteam.helper.MyPreferenceManager;
 
 /**
  * Created by ahlem_daoud on 29/12/2016.
  */
 
 public class TeamUpApp extends Application {
+
+
+    private MyPreferenceManager pref;
+    private static TeamUpApp mInstance;
+    public static volatile Handler applicationHandler = null;
+
     // Tag for fragment manager
     public static final String TAG_GRID_FRAGMENT = "movie_grid_fragment";
     // SharedPreference Keys
@@ -53,5 +62,20 @@ public class TeamUpApp extends Application {
     public void onCreate() {
         super.onCreate();
         mAppContext = getApplicationContext();
+        mInstance = this;
+        applicationHandler = new Handler(getInstance().getMainLooper());
+    }
+
+    public static synchronized TeamUpApp getInstance() {
+        return mInstance;
+    }
+
+    public MyPreferenceManager getPrefManager() {
+        if (pref == null) {
+            pref = new MyPreferenceManager(this);
+        }
+
+        return pref;
     }
 }
+

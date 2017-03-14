@@ -12,7 +12,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/MyMaterialTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".wizardPage.activty_wizard.projet.AddProjectActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -36,6 +36,10 @@
         <activity android:name=".Activities.Users.EnterEmail" />
         <activity android:name=".Activities.Project.ProjectActivity" />
         <activity android:name=".Activities.Project.ProjectDetailActivity" />
+
+
+        <activity android:name=".wizardPage.activty_wizard.evenement.AddEventActivity" />
+
     </application>
 
 </manifest>

@@ -2,115 +2,26 @@ package mobile.esprit.tn.mobileteam.Models;
 
 import com.backendless.Backendless;
 import com.backendless.BackendlessCollection;
+import com.backendless.BackendlessUser;
 import com.backendless.async.callback.AsyncCallback;
+import com.backendless.geo.GeoPoint;
 import com.backendless.persistence.BackendlessDataQuery;
 
-import java.io.Serializable;
+import mobile.esprit.tn.mobileteam.Models.Future;
+import mobile.esprit.tn.mobileteam.Models.Image;
+import mobile.esprit.tn.mobileteam.Models.Video;
 
-public class News implements Serializable
+public class News
 {
   private String ownerId;
   private String objectId;
   private java.util.Date created;
   private java.util.Date updated;
   private String name;
+  private java.util.Date NewsDate;
   private String description;
-  private java.util.List<Video> medias;
-
-  public static News findById(String id)
-  {
-    return Backendless.Data.of(News.class).findById(id);
-  }
-
-  public static Future<News> findByIdAsync(String id)
-  {
-    if (Backendless.isAndroid()) {
-      throw new UnsupportedOperationException("Using this method is restricted in Android");
-    } else {
-      Future<News> future = new Future<News>();
-      Backendless.Data.of(News.class).findById(id, future);
-
-      return future;
-    }
-  }
-
-  public static void findByIdAsync(String id, AsyncCallback<News> callback)
-  {
-    Backendless.Data.of(News.class).findById(id, callback);
-  }
-
-  public static News findFirst()
-  {
-    return Backendless.Data.of(News.class).findFirst();
-  }
-
-  public static Future<News> findFirstAsync()
-  {
-    if (Backendless.isAndroid()) {
-      throw new UnsupportedOperationException("Using this method is restricted in Android");
-    } else {
-      Future<News> future = new Future<News>();
-      Backendless.Data.of(News.class).findFirst(future);
-
-      return future;
-    }
-  }
-
-  public static void findFirstAsync(AsyncCallback<News> callback)
-  {
-    Backendless.Data.of(News.class).findFirst(callback);
-  }
-
-  public static News findLast()
-  {
-    return Backendless.Data.of(News.class).findLast();
-  }
-
-  public static Future<News> findLastAsync()
-  {
-    if( Backendless.isAndroid() )
-    {
-      throw new UnsupportedOperationException( "Using this method is restricted in Android" );
-    }
-    else
-    {
-      Future<News> future = new Future<News>();
-      Backendless.Data.of(News.class).findLast(future);
-
-      return future;
-    }
-  }
-
-  public static void findLastAsync(AsyncCallback<News> callback)
-  {
-    Backendless.Data.of(News.class).findLast(callback);
-  }
-
-  public static BackendlessCollection<News> find(BackendlessDataQuery query)
-  {
-    return Backendless.Data.of(News.class).find(query);
-  }
-
-  public static Future<BackendlessCollection<News>> findAsync(BackendlessDataQuery query)
-  {
-    if( Backendless.isAndroid() )
-    {
-      throw new UnsupportedOperationException( "Using this method is restricted in Android" );
-    }
-    else
-    {
-      Future<BackendlessCollection<News>> future = new Future<BackendlessCollection<News>>();
-      Backendless.Data.of(News.class).find(query, future);
-
-      return future;
-    }
-  }
-
-  public static void findAsync(BackendlessDataQuery query, AsyncCallback<BackendlessCollection<News>> callback)
-  {
-    Backendless.Data.of(News.class).find(query, callback);
-  }
-
+  private java.util.List<Image> Images;
+  private java.util.List<Video> videos;
   public String getOwnerId()
   {
     return ownerId;
@@ -121,7 +32,8 @@ public class News implements Serializable
     return objectId;
   }
 
-  public java.util.Date getCreated() {
+  public java.util.Date getCreated()
+  {
     return created;
   }
 
@@ -135,35 +47,59 @@ public class News implements Serializable
     return name;
   }
 
-  public void setName(String name)
+  public void setName( String name )
   {
     this.name = name;
   }
 
-  public String getDescription() {
+  public java.util.Date getNewsDate()
+  {
+    return NewsDate;
+  }
+
+  public void setNewsDate( java.util.Date NewsDate )
+  {
+    this.NewsDate = NewsDate;
+  }
+
+  public String getDescription()
+  {
     return description;
   }
 
-  public void setDescription(String description)
+  public void setDescription( String description )
   {
     this.description = description;
   }
 
-  public java.util.List<Video> getMedias()
+  public java.util.List<Image> getImages()
   {
-    return medias;
+    return Images;
   }
 
-  public void setMedias(java.util.List<Video> medias)
+  public void setImages( java.util.List<Image> Images )
   {
-    this.medias = medias;
+    this.Images = Images;
   }
 
-  public News save() {
-    return Backendless.Data.of(News.class).save(this);
+  public java.util.List<Video> getVideos()
+  {
+    return videos;
   }
 
-  public Future<News> saveAsync() {
+  public void setVideos( java.util.List<Video> videos )
+  {
+    this.videos = videos;
+  }
+
+
+  public News save()
+  {
+    return Backendless.Data.of( News.class ).save( this );
+  }
+
+  public Future<News> saveAsync()
+  {
     if( Backendless.isAndroid() )
     {
       throw new UnsupportedOperationException( "Using this method is restricted in Android" );
@@ -171,20 +107,20 @@ public class News implements Serializable
     else
     {
       Future<News> future = new Future<News>();
-      Backendless.Data.of(News.class).save(this, future);
+      Backendless.Data.of( News.class ).save( this, future );
 
       return future;
     }
   }
 
-  public void saveAsync(AsyncCallback<News> callback)
+  public void saveAsync( AsyncCallback<News> callback )
   {
-    Backendless.Data.of(News.class).save(this, callback);
+    Backendless.Data.of( News.class ).save( this, callback );
   }
 
   public Long remove()
   {
-    return Backendless.Data.of(News.class).remove(this);
+    return Backendless.Data.of( News.class ).remove( this );
   }
 
   public Future<Long> removeAsync()
@@ -196,14 +132,114 @@ public class News implements Serializable
     else
     {
       Future<Long> future = new Future<Long>();
-      Backendless.Data.of(News.class).remove(this, future);
+      Backendless.Data.of( News.class ).remove( this, future );
 
       return future;
     }
   }
 
-  public void removeAsync(AsyncCallback<Long> callback)
+  public void removeAsync( AsyncCallback<Long> callback )
   {
-    Backendless.Data.of(News.class).remove(this, callback);
+    Backendless.Data.of( News.class ).remove( this, callback );
+  }
+
+  public static News findById( String id )
+  {
+    return Backendless.Data.of( News.class ).findById( id );
+  }
+
+  public static Future<News> findByIdAsync( String id )
+  {
+    if( Backendless.isAndroid() )
+    {
+      throw new UnsupportedOperationException( "Using this method is restricted in Android" );
+    }
+    else
+    {
+      Future<News> future = new Future<News>();
+      Backendless.Data.of( News.class ).findById( id, future );
+
+      return future;
+    }
+  }
+
+  public static void findByIdAsync( String id, AsyncCallback<News> callback )
+  {
+    Backendless.Data.of( News.class ).findById( id, callback );
+  }
+
+  public static News findFirst()
+  {
+    return Backendless.Data.of( News.class ).findFirst();
+  }
+
+  public static Future<News> findFirstAsync()
+  {
+    if( Backendless.isAndroid() )
+    {
+      throw new UnsupportedOperationException( "Using this method is restricted in Android" );
+    }
+    else
+    {
+      Future<News> future = new Future<News>();
+      Backendless.Data.of( News.class ).findFirst( future );
+
+      return future;
+    }
+  }
+
+  public static void findFirstAsync( AsyncCallback<News> callback )
+  {
+    Backendless.Data.of( News.class ).findFirst( callback );
+  }
+
+  public static News findLast()
+  {
+    return Backendless.Data.of( News.class ).findLast();
+  }
+
+  public static Future<News> findLastAsync()
+  {
+    if( Backendless.isAndroid() )
+    {
+      throw new UnsupportedOperationException( "Using this method is restricted in Android" );
+    }
+    else
+    {
+      Future<News> future = new Future<News>();
+      Backendless.Data.of( News.class ).findLast( future );
+
+      return future;
+    }
+  }
+
+  public static void findLastAsync( AsyncCallback<News> callback )
+  {
+    Backendless.Data.of( News.class ).findLast( callback );
+  }
+
+  public static BackendlessCollection<News> find( BackendlessDataQuery query )
+  {
+    return Backendless.Data.of( News.class ).find( query );
+  }
+
+  public static Future<BackendlessCollection<News>> findAsync( BackendlessDataQuery query )
+  {
+    if( Backendless.isAndroid() )
+    {
+      throw new UnsupportedOperationException( "Using this method is restricted in Android" );
+    }
+    else
+    {
+      Future<BackendlessCollection<News>> future = new Future<BackendlessCollection<News>>();
+      Backendless.Data.of( News.class ).find( query, future );
+
+      return future;
+    }
+  }
+
+  public static void findAsync( BackendlessDataQuery query, AsyncCallback<BackendlessCollection<News>> callback )
+  {
+    Backendless.Data.of( News.class ).find( query, callback );
   }
 }

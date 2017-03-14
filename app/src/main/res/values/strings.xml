@@ -176,5 +176,38 @@
         <item>http://scontent-a-fra.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10899123_922231267802027_1123900984_n.jpg</item>
         <item>http://scontent-b-fra.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10899087_405295322969722_20422376_n.jpg</item>
     </string-array>
+
+    <!-- projet -->
+
+    <string name="nom">NOM</string>
+    <string name="description">DESCRIPTION</string>
+    <string name="date">DATE</string>
+    <string name="heure">HEURE</string>
+    <string name="date_début">DATE DEBUT</string>
+    <string name="heure_début">HEURE DEBUT</string>
+    <string name="date_fin">DATE FIN</string>
+    <string name="heure_fin">HEURE FIN</string>
+
+    <string name="year">ANNEE</string>
+    <string name="label_image_projet">IMAGE</string>
+
+    <string name="add_award">Ajouter un nouveau prix</string>
+    <string name="add_technology">Ajouter une nouvelle technologie</string>
+
+    <!-- video  -->
+
+    <string name="youtubeId">youtubeId</string>
+    <string name="name">nom</string>
+    <string name="imageUrl">imageUrl</string>
+    <string name="uploaded">uploaded</string>
+    <string name="url">url</string>
+    <string name="size">size</string>
+
+    <!--wizzard-->
+    <string name="next">Next</string>
+    <string name="prev">Previous</string>
+    <string name="finish">Submit order</string>
+    <string name="review">Review</string>
+
 </resources>
 
