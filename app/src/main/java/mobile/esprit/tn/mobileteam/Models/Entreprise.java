@@ -5,14 +5,14 @@ import com.backendless.BackendlessCollection;
 import com.backendless.async.callback.AsyncCallback;
 import com.backendless.persistence.BackendlessDataQuery;
 
-import java.io.Serializable;
-
-public class Entreprise implements Serializable
+public class Entreprise
 {
   private String objectId;
   private String ownerId;
   private String name;
   private java.util.Date created;
+  private String adresse;
+  private String description;
   private java.util.Date updated;
 
   public static Entreprise findById(String id)
@@ -134,6 +134,22 @@ public class Entreprise implements Serializable
   public java.util.Date getCreated()
   {
     return created;
+  }
+
+  public String getAdresse() {
+    return adresse;
+  }
+
+  public void setAdresse(String adresse) {
+    this.adresse = adresse;
+  }
+
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
   }
 
   public java.util.Date getUpdated()

@@ -5,12 +5,11 @@ import com.backendless.BackendlessCollection;
 import com.backendless.async.callback.AsyncCallback;
 import com.backendless.persistence.BackendlessDataQuery;
 
-import java.io.Serializable;
-
-public class Technology implements Serializable
+public class Technology
 {
   private String ownerId;
   private java.util.Date created;
+  private String Name;
   private String objectId;
   private java.util.Date updated;
 
@@ -122,6 +121,14 @@ public class Technology implements Serializable
   public java.util.Date getCreated()
   {
     return created;
+  }
+
+  public String getName() {
+    return Name;
+  }
+
+  public void setName(String Name) {
+    this.Name = Name;
   }
 
   public String getObjectId() {

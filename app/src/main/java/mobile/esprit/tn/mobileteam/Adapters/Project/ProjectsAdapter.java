@@ -18,7 +18,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-import mobile.esprit.tn.mobileteam.Activities.Project.Project_detail_activity;
+import mobile.esprit.tn.mobileteam.Activities.Project.ProjectDetailActivity;
 import mobile.esprit.tn.mobileteam.Models.Project;
 import mobile.esprit.tn.mobileteam.R;
 
@@ -65,7 +65,7 @@ public class ProjectsAdapter  extends RecyclerView.Adapter<ProjectsAdapter.MyVie
             @Override
             public void onClick(View view) {
                 Toast.makeText(mContext,"you clicked on item number"+ getItemCount(),Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(mContext, Project_detail_activity.class);
+                Intent intent = new Intent(mContext, ProjectDetailActivity.class);
 
                 // intent.putExtra(Project_detail_activity.EXTRA_NAME,  holder.name.toString());
                 mContext.startActivity(intent);

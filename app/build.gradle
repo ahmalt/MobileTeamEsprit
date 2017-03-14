@@ -58,7 +58,15 @@ dependencies {
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
     compile 'com.jayway.android.robotium:robotium-solo:5.2.1'
     compile 'com.jakewharton:butterknife:8.1.0'
-    compile 'com.google.android.gms:play-services:9.6.1'
+    compile 'com.google.android.gms:play-services-cast:9.8.0'
     testCompile 'junit:junit:4.12'
     apt 'com.jakewharton:butterknife-compiler:8.1.0'
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    compile 'com.flaviofaria:kenburnsview:1.0.7'
+    compile 'com.ramotion.foldingcell:folding-cell:1.1.0'
+    compile 'com.github.ybq:Android-SpinKit:1.1.0'
+    compile 'com.alexzh:circleimageview:1.1.2@aar'
+    compile 'com.mikhaellopez:circularimageview:2.0.1'
+
+
 }

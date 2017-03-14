@@ -5,18 +5,18 @@ import com.backendless.BackendlessCollection;
 import com.backendless.async.callback.AsyncCallback;
 import com.backendless.persistence.BackendlessDataQuery;
 
-import java.io.Serializable;
-
-public class Events implements Serializable
+public class Events
 {
   private java.util.Date updated;
+  private java.util.Date eventDateEnd;
   private String name;
   private String description;
   private java.util.Date created;
-  private java.util.Date eventdate;
+  private java.util.Date eventdateStart;
   private String ownerId;
   private String objectId;
-  private java.util.List<Video> medias;
+  private java.util.List<Image> Images;
+  private java.util.List<Video> Videos;
 
   public static Events findById(String id)
   {
@@ -117,6 +117,14 @@ public class Events implements Serializable
     return updated;
   }
 
+  public java.util.Date getEventDateEnd() {
+    return eventDateEnd;
+  }
+
+  public void setEventDateEnd(java.util.Date eventDateEnd) {
+    this.eventDateEnd = eventDateEnd;
+  }
+
   public String getName()
   {
     return name;
@@ -141,13 +149,13 @@ public class Events implements Serializable
     return created;
   }
 
-  public java.util.Date getEventdate() {
-    return eventdate;
+  public java.util.Date getEventdateStart() {
+    return eventdateStart;
   }
 
-  public void setEventdate(java.util.Date eventdate)
+  public void setEventdateStart(java.util.Date eventdateStart)
   {
-    this.eventdate = eventdate;
+    this.eventdateStart = eventdateStart;
   }
 
   public String getOwnerId()
@@ -160,12 +168,20 @@ public class Events implements Serializable
     return objectId;
   }
 
-  public java.util.List<Video> getMedias() {
-    return medias;
+  public java.util.List<Image> getImages() {
+    return Images;
   }
 
-  public void setMedias(java.util.List<Video> medias) {
-    this.medias = medias;
+  public void setImages(java.util.List<Image> Images) {
+    this.Images = Images;
+  }
+
+  public java.util.List<Video> getVideos() {
+    return Videos;
+  }
+
+  public void setVideos(java.util.List<Video> Videos) {
+    this.Videos = Videos;
   }
 
   public Events save() {

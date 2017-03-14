@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+
+    <color name="title_color">#000</color>
+    <color name="edit_profile">#5F76BF</color>
+    <color name="bottom_black_bgcolor">#90000000</color>
+
+    <color name="titleBadgeTitle">#adafb1</color>
+    <color name="titleBadgeText">#adafb1</color>
+    <color name="bgTitleRight">#ffffff</color>s
+    <color name="contentBadgeTitle">#a9a9a9</color>
+    <color name="espritLightGray">#e0e0e0</color>
+    <color name="espritGray">#333</color>
+    <color name="espritblack">#2c2c2c</color>
+    <color name="espritRed">#cd2122</color>
     <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#212121</color>
     <color name="colorPrimary">#000000</color>
